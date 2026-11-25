@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - VisionX</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900 text-white">
+
+    <header class="bg-gray-800 p-6">
+        <nav class="flex justify-between items-center max-w-7xl mx-auto">
+            <div class="text-2xl font-bold">VisionX</div>
+            <ul class="flex space-x-8">
+                <li><a href="index.html" class="hover:text-primary">Home</a></li>
+                <li><a href="shop.html" class="hover:text-primary">Shop</a></li>
+                <li><a href="cart.html" class="hover:text-primary">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="py-12 max-w-7xl mx-auto px-6">
+        <h1 class="text-4xl font-bold mb-8">Checkout</h1>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Checkout Form -->
+            <div class="lg:col-span-2 space-y-8">
+                <!-- Shipping Address -->
+                <div class="bg-gray-800 rounded-xl p-8">
+                    <h2 class="text-2xl font-bold mb-6">Shipping Address</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">First Name</label>
+                            <input type="text" class="w-full bg-gray-700 text-white px-4 py-3 rounded">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Last Name</label>
+                            <input type="text" class="w-full bg-gray-700 text-white px-4 py-3 rounded">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-medium mb-2">Address</label>
+                            <input type="text" class="w-full bg-gray-700 text-white px-4 py-3 rounded">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">City</label>
+                            <input type="text" class="w-full bg-gray-700 text-white px-4 py-3 rounded">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">ZIP Code</label>
+                            <input type="text" class="w-full bg-gray-700 text-white px-4 py-3 rounded">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shipping Method -->
+                <div class="bg-gray-800 rounded-xl p-8">
+                    <h2 class="text-2xl font-bold mb-6">Shipping Method</h2>
+                    <div class="space-y-4">
+                        <label class="flex items-center justify-between p-4 bg-gray-700 rounded cursor-pointer">
+                            <div class="flex items-center">
+                                <input type="radio" name="shipping" class="mr-3">
+                                <div>
+                                    <div class="font-semibold">Standard Shipping</div>
+                                    <div class="text-sm text-gray-400">5-7 business days</div>
+                                </div>
+                            </div>
+                            <span class="font-bold">Free</span>
+                        </label>
+                        <label class="flex items-center justify-between p-4 bg-gray-700 rounded cursor-pointer">
+                            <div class="flex items-center">
+                                <input type="radio" name="shipping" class="mr-3">
+                                <div>
+                                    <div class="font-semibold">Express Shipping</div>
+                                    <div class="text-sm text-gray-400">2-3 business days</div>
+                                </div>
+                            </div>
+                            <span class="font-bold">$9.99</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Payment Method -->
+                <div class="bg-gray-800 rounded-xl p-8">
+                    <h2 class="text-2xl font-bold mb-6">Payment Method</h2>
+                    <div class="space-y-4">
+                        <label class="flex items-center justify-between p-4 bg-gray-700 rounded cursor-pointer">
+                            <div class="flex items-center">
+                                <input type="radio" name="payment" class="mr-3">
+                                <div>
+                                    <div class="font-semibold">Credit Card</div>
+                                    <div class="text-sm text-gray-400">Visa, Mastercard, Amex</div>
+                                </div>
+                            </div>
+                        </label>
+                        <label class="flex items-center justify-between p-4 bg-gray-700 rounded cursor-pointer">
+                            <div class="flex items-center">
+                                <input type="radio" name="payment" class="mr-3">
+                                <div>
+                                    <div class="font-semibold">PayPal</div>
+                                    <div class="text-sm text-gray-400">Pay with your PayPal account</div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="lg:col-span-1">
+                <div class="bg-gray-800 rounded-xl p-8 sticky top-8">
+                    <h2 class="text-2xl font-bold mb-6">Order Summary</h2>
+                    <div id="checkout-items" class="space-y-4 mb-6">
+                        <!-- Items injected by JS -->
+                    </div>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Subtotal</span>
+                            <span id="checkout-subtotal">$0.00</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Shipping</span>
+                            <span id="checkout-shipping">Free</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Tax</span>
+                            <span id="checkout-tax">$0.00</span>
+                        </div>
+                        <div class="border-t border-gray-700 pt-3 flex justify-between text-xl font-bold">
+                            <span>Total</span>
+                            <span id="checkout-total">$0.00</span>
+                        </div>
+                    </div>
+                    <button class="btn-primary w-full py-3 mb-4">Place Order</button>
+                    <a href="cart.html" class="btn-secondary w-full block text-center py-3">Back to Cart</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

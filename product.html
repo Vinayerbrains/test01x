@@ -1,1 +1,80 @@
-(120 lines, prepared; read it again to see it)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionX Pro - Product Detail</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900 text-white">
+
+    <header class="bg-gray-800 p-6">
+        <nav class="flex justify-between items-center max-w-7xl mx-auto">
+            <div class="text-2xl font-bold">VisionX</div>
+            <ul class="flex space-x-8">
+                <li><a href="index.html" class="hover:text-primary">Home</a></li>
+                <li><a href="shop.html" class="hover:text-primary">Shop</a></li>
+                <li><a href="cart.html" class="hover:text-primary">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="py-12 max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Product Gallery -->
+            <div>
+                <div id="product-color-swatch" class="relative mb-4">
+                    <img id="product-gallery-img" src="" alt="Product" class="w-full rounded-xl">
+                    <button id="gallery-prev" class="absolute left-4 top-1/2 -translate-y-1/2 glassmorphism-btn p-3 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                    </button>
+                    <button id="gallery-next" class="absolute right-4 top-1/2 -translate-y-1/2 glassmorphism-btn p-3 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                    </button>
+                </div>
+                <div id="product-color-swatches" class="flex justify-center space-x-4 mt-4"></div>
+            </div>
+
+            <!-- Product Info -->
+            <div>
+                <h1 class="text-4xl font-bold mb-4"></h1>
+                <div class="flex items-center mb-4">
+                    <div class="text-yellow-400 text-xl">★★★★★</div>
+                    <span class="ml-2 text-gray-400">4.9 (248 reviews)</span>
+                </div>
+                <p class="text-3xl font-bold text-primary">$299</p>
+                <div class="features mt-6"></div>
+                <p class="text-gray-300 mb-6" id="product-description"></p>
+
+                <div class="mb-6">
+                    <h3 class="font-semibold mb-2">Color</h3>
+                    <div class="flex space-x-3" id="product-colors"></div>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="font-semibold mb-2">Quantity</h3>
+                    <div class="flex items-center">
+                        <button id="qty-decrease" class="bg-gray-700 px-4 py-2 rounded-l">-</button>
+                        <input type="number" id="quantity" value="1" min="1" max="10" class="w-16 text-center bg-gray-800 py-2">
+                        <button id="qty-increase" class="bg-gray-700 px-4 py-2 rounded-r">+</button>
+                    </div>
+                </div>
+
+                <div class="flex space-x-4">
+                    <button class="btn-primary flex-1 py-3 add-to-cart-btn">Add to Cart</button>
+                    <button class="btn-secondary flex-1 py-3">Buy Now</button>
+                </div>
+
+                <div class="mt-6 flex space-x-6 text-sm text-gray-400">
+                    <span>✓ Free shipping</span>
+                    <span>✓ 30-day returns</span>
+                    <span>✓ 2-year warranty</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

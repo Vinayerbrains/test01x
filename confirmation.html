@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmed - VisionX</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900 text-white">
+
+    <header class="bg-gray-800 p-6">
+        <nav class="flex justify-between items-center max-w-7xl mx-auto">
+            <div class="text-2xl font-bold">VisionX</div>
+            <ul class="flex space-x-8">
+                <li><a href="index.html" class="hover:text-primary">Home</a></li>
+                <li><a href="shop.html" class="hover:text-primary">Shop</a></li>
+                <li><a href="cart.html" class="hover:text-primary">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="py-20 max-w-3xl mx-auto px-6 text-center">
+        <!-- Success Icon -->
+        <div class="w-24 h-24 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-8">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+            </svg>
+        </div>
+
+        <h1 class="text-5xl font-bold mb-4">Order Confirmed!</h1>
+        <p class="text-gray-400 text-lg mb-8">Thank you for your purchase. Your order #VX-2026-001234 has been received.</p>
+
+        <!-- Order Details -->
+        <div class="bg-gray-800 rounded-xl p-8 mb-8 text-left">
+            <h2 class="text-2xl font-bold mb-6">Order Details</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <span class="text-gray-400">Shipping Address</span>
+                    <p class="font-semibold">John Doe<br>123 Tech Lane<br>San Francisco, CA 94107</p>
+                </div>
+                <div>
+                    <span class="text-gray-400">Payment Method</span>
+                    <p class="font-semibold">Visa ending in 4242</p>
+                </div>
+                <div>
+                    <span class="text-gray-400">Shipping Method</span>
+                    <p class="font-semibold">Standard Shipping (Free)</p>
+                </div>
+                <div>
+                    <span class="text-gray-400">Estimated Delivery</span>
+                    <p class="font-semibold">Nov 7 - Nov 10, 2026</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Items Ordered -->
+        <div class="bg-gray-800 rounded-xl p-8 mb-8 text-left">
+            <h2 class="text-2xl font-bold mb-6">Items Ordered</h2>
+            <div id="confirmation-items" class="space-y-4">
+                <!-- Items injected by JS -->
+            </div>
+            <div class="border-t border-gray-700 mt-6 pt-6 flex justify-between text-xl font-bold">
+                <span>Total Charged</span>
+                <span id="confirmation-total">$0.00</span>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="shop.html" class="btn-primary px-8 py-3">Continue Shopping</a>
+            <a href="index.html" class="btn-secondary px-8 py-3">Back to Home</a>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - VisionX</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900 text-white">
+
+    <header class="bg-gray-800 p-6">
+        <nav class="flex justify-between items-center max-w-7xl mx-auto">
+            <div class="text-2xl font-bold">VisionX</div>
+            <ul class="flex space-x-8">
+                <li><a href="index.html" class="hover:text-primary">Home</a></li>
+                <li><a href="shop.html" class="hover:text-primary">Shop</a></li>
+                <li><a href="cart.html" class="text-primary">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="py-12 max-w-7xl mx-auto px-6">
+        <h1 class="text-4xl font-bold mb-8">Your Shopping Cart</h1>
+
+        <!-- Cart Items -->
+        <div id="cart-items" class="space-y-6 mb-8">
+            <!-- Items injected by JS -->
+        </div>
+
+        <!-- Empty Cart State -->
+        <div id="empty-cart" class="text-center py-16 hidden">
+            <p class="text-xl text-gray-400 mb-6">Your cart is empty</p>
+            <a href="shop.html" class="btn-primary">Continue Shopping</a>
+        </div>
+
+        <!-- Cart Summary -->
+        <div id="cart-summary" class="bg-gray-800 rounded-xl p-8 max-w-md ml-auto">
+            <h2 class="text-2xl font-bold mb-6">Order Summary</h2>
+            <div class="space-y-4 mb-6">
+                <div class="flex justify-between">
+                    <span class="text-gray-400">Subtotal</span>
+                    <span id="subtotal">$0.00</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-400">Shipping</span>
+                    <span id="shipping">Free</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-400">Tax</span>
+                    <span id="tax">$0.00</span>
+                </div>
+                <div class="border-t border-gray-700 pt-4 flex justify-between text-xl font-bold">
+                    <span>Total</span>
+                    <span id="total">$0.00</span>
+                </div>
+            </div>
+            <input type="text" placeholder="Discount code" class="w-full bg-gray-700 text-white px-4 py-3 rounded mb-4">
+            <button class="btn-primary w-full py-3 mb-4">Apply Code</button>
+            <a href="checkout.html" class="btn-secondary-dark w-full block text-center py-3">Proceed to Checkout</a>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
